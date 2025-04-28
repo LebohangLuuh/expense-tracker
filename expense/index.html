@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body class="bg-zinc-100">
+
+    <div class="w-screen h-screen md:w-[35rem] md:mx-auto flex flex-col relative">
+
+        <h1 class="text-2xl text-center font-bold mt-4">Home</h1>
+
+        <div class="bg-orange-300 flex m-4 p-6 rounded-[1rem] text-lg">
+            <div class="flex-1 text-center border-r-[1px]">
+                <h1>Expense</h1>
+                <div class="font-bold" id="showExpense">R200</div>
+            </div>
+            <div class="flex-1 text-center">
+                <h1>Income</h1>
+                <div class="font-bold" id="showIncome">R200</div>
+            </div>
+            <div class="flex-1 text-center border-l-[1px]">
+                <h1>Balance</h1>
+                <div class="font-bold" id="showBalance">R200</div>
+            </div>
+        </div>
+
+        <div id="addTransactionBox"
+            class="hidden p-8 flex flex-col gap-3 items-center shadow-md border-[1px] border-zinc-200 m-4 rounded-md">
+            <div class="bg-white w-full rounded-md p-3 shadow-md">
+                <input class="outline-none w-full bg-white rounded-md" type="text" id="descriptionInput"
+                    placeholder="Description">
+            </div>
+            <div class="bg-white w-full rounded-md p-3 shadow-md">
+                <input class="outline-none w-full bg-white rounded-md" type="number" id="amountInput" min="1"
+                    placeholder="Amount">
+            </div>
+            <div class="my-4 flex gap-8">
+                <label for="income" class="cursor-pointer">
+                    <input type="radio" checked name="transactionType" value="income" id="income">
+                    INCOME
+                </label>
+                <label for="expense" class="cursor-pointer">
+                    <input type="radio" name="transactionType" value="expense" id="expense">
+                    EXPENSE
+                </label>
+            </div>
+
+            <button id="addTransactionBtn"
+                class="bg-orange-300 hover:bg-orange-500 px-10 py-2 cursor-pointer rounded-md">Add
+                Transaction</button>
+        </div>
+
+        <hr class="text-orange-300 border-[1.5px]">
+
+        <div class="mt-4 flex-1 overflow-y-scroll flex flex-col" id="showTransactions">
+
+            <div class="flex gap-4 items-center p-4 shadow-sm">
+                <button
+                    class="border-4 text-zinc-400 border-orange-200 p-1 rounded-md hover:bg-orange-200 hover:text-zinc-900 cursor-pointer">
+                    <i class="bi bi-pen text-2xl"></i>
+                </button>
+                <div class="flex-1 truncate">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque quam nihil in numquam consequatur
+                    dolore illo sint est exercitationem.
+                </div>
+                <div class="font-bold text-lg">R200</div>
+                <button
+                    class="border-4 text-zinc-400 border-rose-300 p-1 rounded-md hover:bg-rose-300 hover:text-zinc-900 cursor-pointer">
+                    <i class="bi bi-trash3 text-2xl"></i>
+                </button>
+            </div>
+
+            <div class="flex gap-4 items-center p-4 shadow-sm">
+                <button
+                    class="border-4 text-zinc-400 border-orange-200 p-1 rounded-md hover:bg-orange-200 hover:text-zinc-900 cursor-pointer">
+                    <i class="bi bi-pen text-2xl"></i>
+                </button>
+                <div class="flex-1 truncate">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque quam nihil in numquam consequatur
+                    dolore illo sint est exercitationem.
+                </div>
+                <div class="font-bold text-lg">R200</div>
+                <button
+                    class="border-4 text-zinc-400 border-rose-300 p-1 rounded-md hover:bg-rose-300 hover:text-zinc-900 cursor-pointer">
+                    <i class="bi bi-trash3 text-2xl"></i>
+                </button>
+            </div>
+
+            <div class="flex gap-4 items-center p-4 shadow-sm">
+                <button
+                    class="border-4 text-zinc-400 border-orange-200 p-1 rounded-md hover:bg-orange-200 hover:text-zinc-900 cursor-pointer">
+                    <i class="bi bi-pen text-2xl"></i>
+                </button>
+                <div class="flex-1 truncate">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eaque quam nihil in numquam consequatur
+                    dolore illo sint est exercitationem.
+                </div>
+                <div class="font-bold text-lg">R200</div>
+                <button
+                    class="border-4 text-zinc-400 border-rose-300 p-1 rounded-md hover:bg-rose-300 hover:text-zinc-900 cursor-pointer">
+                    <i class="bi bi-trash3 text-2xl"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+        <button id="toggleAddTransactionBox"
+            class="absolute right-[1rem] bottom-[4rem] md:right-4 bg-orange-300 px-5 py-3 rounded-full shadow-md text-4xl font-bolder animate-bounce">
+            +
+        </button>
+
+    </div>
+
+</body>
+
+</html>

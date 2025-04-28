@@ -15,6 +15,8 @@ const toggleAddTransactionBox = document.querySelector(
 
 const addTransactionBtn = document.querySelector("#addTransactionBtn");
 
+const removeTransactionBtn = document.querySelector("#removeTransactionBtn");
+
 // event listeners
 toggleAddTransactionBox.addEventListener("click", () => {
   addTransactionBox.classList.toggle("hidden");
@@ -24,6 +26,9 @@ addTransactionBtn.addEventListener("click", () => {
   const transactionType = document.querySelector(
     "input[name='transactionType']:checked"
   )?.value;
+
+
+
 
   const descriptionInput = document.querySelector("#descriptionInput").value;
   const amountInput = document.querySelector("#amountInput").value;
@@ -49,6 +54,18 @@ addTransactionBtn.addEventListener("click", () => {
 
 // functions
 
+removeTransactionBtn.addEventListener("click", () => {
+  const index = document.querySelector("#indexInput").value;
+  try {
+    removeTranctionFn(index);
+    showTotal();
+    renderTransaction();
+    document.querySelector("#indexInput").value = "";
+  } catch (error) {
+    alert(error.message);
+  }
+});
+
 function showTotal() {
   calculateTotalFn();
   const showIncome = document.querySelector("#showIncome");
@@ -70,16 +87,16 @@ function renderTransaction() {
     showTransactions.innerHTML += `
      <div class="flex gap-4 items-center p-4 shadow-sm">
                 <button
-                    class="border-4 text-zinc-400 border-orange-200 p-1 rounded-md hover:bg-orange-200 hover:text-zinc-900 cursor-pointer">
-                    <i class="bi bi-pen text-2xl"></i>
+                    class="border-2 text-white border-blue-400 p-1 rounded-md hover:bg-blue-600 hover:border-blue-600 hover:text-white cursor-pointer">
+                    <i class="bi bi-pen text-xl"></i>
                 </button>
-                <div class="flex-1 truncate">
+                <div class="flex-1 text-white truncate">
                     ${t.description}
                 </div>
-                <div class="font-bold text-lg">R${t.amount}</div>
+                <div class="font-bold text-white text-lg">R${t.amount}</div>
                 <button
-                    class="border-4 text-zinc-400 border-rose-300 p-1 rounded-md hover:bg-rose-300 hover:text-zinc-900 cursor-pointer">
-                    <i class="bi bi-trash3 text-2xl"></i>
+                    class="border-2 text-white border-blue-400 p-1 rounded-md hover:bg-blue-700 hover:border-blue-700 hover:text-white cursor-pointer">
+                    <i class="bi bi-trash3 text-xl"></i>
                 </button>
             </div>
     `;

@@ -52,7 +52,13 @@ function calculateTotalFn() {
 
   total.income = income;
   total.expense = expense;
+
+  if (total.income < total.balance) {
+    throw new Error("you have Insuficient balance");
+  }
+
   total.balance = income - expense;
+
 }
 
 export {

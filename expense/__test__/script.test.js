@@ -122,4 +122,9 @@ describe("[calculateTotalFn]", () => {
     expect(total.expense).toBe(5);
     expect(total.balance).toBe(5);
   });
+
+  test("should throw an error when balance is less than 0", () => {
+    let balance = -10;  
+    expect(() => calculateTotalFn()).toThrow();
+  })
 });

@@ -27,9 +27,6 @@ addTransactionBtn.addEventListener("click", () => {
     "input[name='transactionType']:checked"
   )?.value;
 
-
-
-
   const descriptionInput = document.querySelector("#descriptionInput").value;
   const amountInput = document.querySelector("#amountInput").value;
 
@@ -92,6 +89,9 @@ function renderTransaction() {
                 </button>
                 <div class="flex-1 text-white truncate">
                     ${t.description}
+                </div>
+                <div class="flex-1 text-white truncate">
+                    ${t.type}
                 </div>
                 <div class="font-bold text-white text-lg">R${t.amount}</div>
                 <button
